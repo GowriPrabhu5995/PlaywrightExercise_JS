@@ -36,6 +36,7 @@ test("GUI Elements Practice", async({browser})=>{
     await daysCheckBox.nth(i).check();
   }
 
+  
 
 
 
