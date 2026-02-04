@@ -11,9 +11,9 @@ test("GUI Elements Practice", async({browser})=>{
    const Address = page.getByLabel("Address:");
    const SelectMale = page.getByLabel('Male').first();
    const SelectFemale = page.getByLabel('Female').last();
-
+// launching application URL
    await page.goto("https://testautomationpractice.blogspot.com/");
-   
+ // Filling  all the required details  
    await GUI_Elements.click();
    await page.waitForEvent("load");
    await EnterName.fill("Gowri Prabhu Kiran");
@@ -36,7 +36,7 @@ test("GUI Elements Practice", async({browser})=>{
     await daysCheckBox.nth(i).check();
   }
 
-  
+
 
 
   
