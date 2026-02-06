@@ -1,7 +1,9 @@
 const {test,expect} = require('@playwright/test')
 
 test("GUI Elements Practice", async({browser})=>{
-
+let county = 'india';
+let color = 'white';
+let animal = 'lion';
    const context = await  browser.newContext();
    const page = await context.newPage();
    const GUI_Elements = page.getByText("GUI Elements");
@@ -30,13 +32,21 @@ test("GUI Elements Practice", async({browser})=>{
   // checking alternative days 
   const daysCheckBox = page.locator("div.form-group:nth-of-type(4) input[type='checkbox']");
   const countofdays = await daysCheckBox.count();
-  await page.pause();
+  
 
   for( let i =0; i<countofdays; i+=2){
     await daysCheckBox.nth(i).check();
   }
 
-  
+  //Dropdown selection 
+ await page.locator('#country').selectOption(county);
+
+ await page.locator('#colors').selectOption(color);
+//
+await page.pause();
+ await page.locator('#animals').selectOption(animal);
+
+
 
 
 
